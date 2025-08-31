@@ -1,10 +1,5 @@
 ## Hi there 👋
-
-<!--
-**inannastasia/inannastasia** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
+I'm Annastasia!
 - 🔭 I’m currently working on becoming a marketing staple in The Shoals area.
 - 🌱 I’m currently learning html, css, and java.
 - 👯 I’m looking to collaborate on anything creative and expressive, for the most part!
