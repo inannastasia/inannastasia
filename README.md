@@ -7,4 +7,3 @@ I'm Annastasia!
 - 💬 Ask me about parenting, holistic health, meditation, music, or marketing :)
 - 📫 How to reach me: inannastasia@gmail.com
 - ⚡ Fun fact: Shrimp have been around for millions of years, dating back to the Cambrian Age which was the dawn of crustaceans: the origination of all insects! 
--->
