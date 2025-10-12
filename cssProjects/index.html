@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inannastasia</title>
+</head>
+<body>
+    <div class="star-container star-1"></div>
+    <div class="star-container star-2"></div>
+    <div class="star-container star-3"></div>
+    <div class="blob-container">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+    <header>
+        <div class="profile">
+        <img id="profile-pic" src="imgs/pianoprop.jpeg" alt="A profile picture of Annastasia">
+            <h1>inannastasia</h1>
+            <p>Rising Resurrection Reflection | Cultivating Chaos to Captivation</p>
+        </div>
+        <nav> 
+           <a href="index.html"><i class="fa-solid fa-house"></i></a>
+           <a href="https://www.youtube.com/inannastasia/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-youtube"></i></a>
+           <a href="https://www.tripadvisor.com/Attraction_Review-g30489-d145168-Reviews-William_Bankhead_National_Forest-Double_Springs_Alabama.html" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-person-hiking"></i></a>
+           <a href="https://substack.com/@inannastasia?" target="_blank" rel="noopener noreferrer" aria-label="Substack">
+                <svg class="substack-icon" aria-hidden="true" role="img" width="28" height="28" viewBox="0 0 20 20">
+                    <g><path d="M1.96484 0.624512H18.0354V2.70052H1.96484V0.624512Z"></path><path d="M1.96484 4.77655H18.0354V6.85254H1.96484V4.77655Z"></path><path d="M1.96484 8.92857V19.9505L10.0001 14.6347L18.0354 19.9505V8.92857H1.96484Z"></path></g>
+                </svg>
+            </a>
+           <a href="../index.html" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-masks-theater"></i></a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-block">
+            <h3>Follow Me</h3>
+            <div class="social-links">
+                <a href="https://tiktok.com/@inannastasia" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://instagram.com/inannastasia" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://facebook.com/inannastasia" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://snapchat.com/t/lWYPGnjJ" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-snapchat"></i></a>
+            </div>
+        </section>
+        
+        <section class="content-block">
+        <a href="https://paypal.me/inannastasia" target="_blank" rel="noopener noreferrer" class="link-button">Paypal</a>
+        </section>
+        <section class="content-block">
+        <a href="https://cash.app/$inannastasia" target="_blank" rel="noopener noreferrer" class="link-button">Cash App</a>
+        </section>
+        <section class="content-block">
+        <a href="https://venmo.com/u/inannastasia" target="_blank" rel="noopener noreferrer" class="link-button">Venmo</a>
+        </section>
+
+        <section class="content-block gallery-selection">
+            <h3>Photo Gallery</h3>
+            <div class="gallery">
+                <img class="hover-rotate" src="imgs/hallwaydark.jpeg" alt="A ghostly woman in a dark hallway.">
+                <img class="hover-grayscale" src="imgs/hallwaylight.jpeg" alt="A creative character holding a candle.">
+                <img class="hover-fade" src="imgs/pianohaunt.jpeg" alt="A haunted piano in a dark room.">
+            </div>
+            </section>
+         </main>
+
+    <footer>
+        <a href="<a href="mailto:?subject=Zelle Info&body=Pay to: 12564152214">For Zelle Transfers</a>">For Zelle Transfers</a> |
+        <span>&copy; inannastasia 2025</span> |
+        <a href="mailto:inannastasia@gmail.com">To Contact</a>
+    </footer>
+
+    <div id="image-modal" class="modal-overlay">
+        <img id="modal-image" src="" alt="Enlarged photo of Annastasia">
+    </div>
+
+        <script>
+            // enlarge profile pic on click
+        const profilePic = document.getElementById('profile-pic');
+        const modal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        profilePic.addEventListener('click', () => {
+            modalImage.src = profilePic.src; 
+            modal.classList.add('show'); 
+});
+modal.addEventListener('click', () => {
+        modal.classList.remove('show');
+});
+    // interactive blob effect
+        const blobs = document.querySelectorAll('.blob')
+        blobs.forEach(blob => {
+            blob.addEventListener('click', (event) => {
+                // The 'event.target' is the specific blob that was clicked
+                const clickedBlob = event.target;
+
+                // Add the 'dance' class to make it move faster
+                clickedBlob.classList.add('dance-effect');
+
+                // After 1 second (1000 milliseconds), remove the class to stop the dance
+                setTimeout(() => {
+                    clickedBlob.classList.remove('dance-effect');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+
+</html>
