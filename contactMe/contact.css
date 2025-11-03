@@ -1,0 +1,324 @@
+html {
+  background-color: black;
+}
+
+body {
+  font-family: 'Century Gothic', sans-serif;
+  margin: 0;
+  color: #333;
+  background-color: transparent;
+  text-align: center;
+}
+
+main {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+.content-block {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+.modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+#modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+.profile h1 {
+  font-family: 'Fantasy', 'Luminari', sans-serif;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin: 10px 0 5px 0;
+}
+
+.profile p {
+  font-style: italic;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin: 0 0 20px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.8em;
+  transition: transform 0.3s ease;
+  padding: 8px;
+}
+
+nav a:hover {
+  transform: scale(1.2);
+}
+
+.substack-icon {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+.contact-form {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #333;
+  width: 400px;
+  text-align: left;
+}
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #5c3a54;
+}
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="password"],
+.contact-form input[type="tel"],
+.contact-form input[type="url"],
+.contact-form input[type="number"],
+.contact-form input[type="date"],
+.contact-form input[type="time"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; 
+}
+.contact-form input[type="color"],
+.contact-form input[type="range"] {
+  padding: 2px;
+}
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5c3a54;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+    }
+
+.contact-form button:hover {
+      background-color: #3a2535;
+    }
+
+.inline-options {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+.inline-options label {
+  font-weight: normal;
+}
+#confirmationMessage {
+  display: none;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
+footer {
+  text-decoration: none;
+  padding: 20px 0;
+  font-size: 0.9em;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+footer a:hover {
+color:#5c3a54;
+}
+
+/* playing around with white star/light reflections to increase depth and soften color overload */
+.star-container {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+}
+.star-container::before,
+.star-container::after {
+  content: '';
+  position: absolute;
+  animation: shimmer-pulse 8s ease-in-out infinite;
+  background: linear-gradient(to right, rgba(255,255,255,0) 20%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 80%);
+}
+.star-container::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.star-container::after {
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@keyframes shimmer-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(15deg);
+  }
+}
+.star-1 {
+  width: 250px;
+  height: 250px;
+  top: 20%;
+  left: 15%;
+  animation-delay: -1s;
+}
+.star-2 {
+  width: 300px;
+  height: 300px;
+  top: 40%;
+  right: 10%;
+}
+.star-3 {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  left: 30%;
+  animation-delay: -3s;
+}
+
+.blob-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.blob {
+  position: absolute;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.blob.dance-effect {
+  animation-name: dance, morph, color-shift !important;
+  animation-duration: 0.5s, 8s, 15s !important;
+}
+
+@keyframes dance {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.2) rotate(10deg); }
+  50% { transform: scale(0.9) rotate(-10deg); }
+  75% { transform: scale(1.1) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes morph {
+  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  50% { border-radius: 30% 70% 50% 50% / 50% 60% 30% 40%; }
+  100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+}
+
+@keyframes color-shift {
+  to { filter: hue-rotate(360deg); }
+}
+
+@keyframes move1 {
+  from { transform: translate(0, 0) scale(1) rotate(0deg); }
+  to { transform: translate(200px, 300px) scale(1.3) rotate(180deg); }
+}
+
+@keyframes move2 {
+  from { transform: translate(0, 0) scale(1.2) rotate(0deg); }
+  to { transform: translate(-300px, -150px) scale(0.8) rotate(-180deg); }
+}
+
+@keyframes move3 {
+  from { transform: translate(0, 0) scale(0.9) rotate(0deg); }
+  to { transform: translate(100px, -250px) scale(1.4) rotate(90deg); }
+}
+
+@keyframes move4 {
+  from { transform: translate(0, 0) scale(1) rotate(0deg); }
+  to { transform: translate(-200px, 150px) scale(1.1) rotate(90deg); }
+}
+
+.blob:nth-child(1) { width: 500px; height: 500px; top: 10%; left: 5%; background: #f0ffa7e8; animation: move1 10s -1s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(2) { width: 500px; height: 500px; top: 20%; right: 10%; background: #ceffa3f0; animation: move2 15s -3s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(3) { width: 500px; height: 500px; top: 40%; left: 20%; background: #b5ffdef6; animation: move3 15s -5s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(4) { width: 500px; height: 500px; bottom: 5%; left: 5%; background: #a5faf6f5; animation: move4 10s -2s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(5) { width: 500px; height: 500px; bottom: 15%; right: 25%; background: #a1c4fd; animation: move1 15s -5s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(6) { width: 500px; height: 500px; top: 5%; right: 40%; background: hsla(240, 100%, 83%, 0.848); animation: move2 10s -1s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(7) { width: 500px; height: 500px; bottom: 30%; right: 5%; background: #c3aaffee; animation: move3 10s -3s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(8) { width: 500px; height: 500px; top: 50%; left: 40%; background: #d89afff2; animation: move4 10s 0s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(9) { width: 500px; height: 500px; top: 70%; right: 15%; background: #f2a1fff6; animation: move1 20s -2s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(10) { width: 500px; height: 500px; top: 80%; left: 10%; background: #f9b5ff; animation: move2 15s -3s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(11) { width: 500px; height: 500px; top: -10%; left: 30%; background: #ff9dcbec; animation: move3 15s -1s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(12) { width: 500px; height: 500px; bottom: -5%; left: 50%; background: #f7fda1; animation: move4 20s -10s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
+.blob:nth-child(13) { width: 190px; height: 190px; top: 40%; right: 35%; background: #c6ffa7ed; animation: move1 20s -12s infinite alternate, morph 8s infinite alternate, color-shift 15s infinite; }
