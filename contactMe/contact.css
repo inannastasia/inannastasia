@@ -1,13 +1,16 @@
 html {
   background-color: black;
 }
-
 body {
   font-family: 'Century Gothic', sans-serif;
   margin: 0;
   color: #333;
   background-color: transparent;
   text-align: center;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -16,13 +19,6 @@ main {
   padding: 0 20px;
   position: relative;
   z-index: 1;
-}
-.content-block {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -101,15 +97,17 @@ nav a:hover {
   height: 28px;
   fill: white;
 }
+
 .contact-form {
+  display: flex;
   background: white;
   padding: 25px;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #333;
   width: 400px;
-  text-align: left;
 }
+
 .contact-form h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -120,27 +118,21 @@ nav a:hover {
     display: block;
     margin-top: 10px;
   }
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="password"],
-.contact-form input[type="tel"],
-.contact-form input[type="url"],
-.contact-form input[type="number"],
-.contact-form input[type="date"],
-.contact-form input[type="time"],
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  box-sizing: border-box; 
-}
-.contact-form input[type="color"],
-.contact-form input[type="range"] {
-  padding: 2px;
-}
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-form input[type="color"],
+    .contact-form input[type="range"] {
+      padding: 2px;
+    }
 .contact-form button {
   width: 100%;
   padding: 10px;
@@ -161,7 +153,7 @@ nav a:hover {
 
 .inline-options {
       display: flex;
-      gap: 15px;
+      gap: 10px;
       margin-top: 5px;
     }
 .inline-options label {
