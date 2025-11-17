@@ -64,28 +64,5 @@ document.addEventListener("DOMContentLoaded", function() {
             contactForm.reset();
             
         });
-    }
-    
-    const profilePic = document.getElementById('profile-pic');
-    const modal = document.getElementById('image-modal');
-    const modalImage = document.getElementById('modal-image');
-    if (profilePic && modal) {
-        profilePic.addEventListener('click', () => {
-            modalImage.src = profilePic.src; 
-            modal.classList.add('show'); 
-        });
-        modal.addEventListener('click', () => {
-            modal.classList.remove('show');
-        });
-    }
-    const blobs = document.querySelectorAll('.blob');
-    blobs.forEach(blob => {
-        blob.addEventListener('click', (event) => {
-            const clickedBlob = event.target;
-            if (clickedBlob.classList.contains('dance-effect')) return;
-            clickedBlob.classList.add('dance-effect');
-            setTimeout(() => {
-                clickedBlob.classList.remove('dance-effect');
-            }, 1000);
-        });
+      }
     })
