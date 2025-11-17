@@ -1,3 +1,94 @@
+main {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+.content-block {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+.modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+#modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+.profile h1 {
+  font-family: 'Fantasy', 'Luminari', sans-serif;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin: 10px 0 5px 0;
+}
+
+.profile p {
+  font-style: italic;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin: 0 0 20px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.8em;
+  transition: transform 0.3s ease;
+  padding: 8px;
+}
+
+nav a:hover {
+  transform: scale(1.2);
+}
+
+.substack-icon {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
 .contact-form {
   margin: auto;
   background: white;
