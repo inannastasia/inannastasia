@@ -1,59 +1,91 @@
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault(); // Prevent the page from reloading
+document.addEventListener("DOMContentLoaded", function() {
 
-      // Collect all field values
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const phone = document.getElementById("phone").value;
-      const website = document.getElementById("website").value;
-      const age = document.getElementById("age").value;
-      const dob = document.getElementById("dob").value;
-      const time = document.getElementById("time").value;
-      const color = document.getElementById("color").value;
-      const range = document.getElementById("range").value;
-      const topic = document.getElementById("topic").value;
-      const message = document.getElementById("message").value;
+    
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault(); 
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const phone = document.getElementById("phone").value;
+            const website = document.getElementById("website").value;
+            const age = document.getElementById("age").value;
+            const dob = document.getElementById("dob").value;
+            const time = document.getElementById("time").value;
+            const color = document.getElementById("color").value;
+            const range = document.getElementById("range").value;
+            const topic = document.getElementById("topic").value;
+            const message = document.getElementById("message").value;
 
-      // Get selected radio
-      const contactMethod = document.querySelector('input[name="contactMethod"]:checked').value;
+            
+            const contactMethod = document.querySelector('input[name="contactMethod"]:checked').value;
 
-      // Get selected checkboxes
-      const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
-                            .map(cb => cb.value)
-                            .join(", ") || "None";
+            
+            const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
+                .map(cb => cb.value)
+                .join(", ") || "None";
 
-      // Display everything in an alert
-      alert(
-        `--- CONTACT FORM DATA ---\n\n` +
-        `Name: ${name}\nEmail: ${email}\nPassword: ${password}\nPhone: ${phone}\nWebsite: ${website}\nAge: ${age}\nDate of Birth: ${dob}\nPreferred Time: ${time}\nFavorite Color: ${color}\nInterest Level: ${range}\nContact Method: ${contactMethod}\nServices Interested In: ${services}\nTopic: ${topic}\nMessage: ${message}`
-      );
+            
+            const resultContainer = document.getElementById("resultContainer");
+            const resultBody = document.querySelector("#resultTable tbody");
 
-      // Reset the form
-      this.reset();
-    });
-        const profilePic = document.getElementById('profile-pic');
-        const modal = document.getElementById('image-modal');
-        const modalImage = document.getElementById('modal-image');
+            
+            resultBody.innerHTML = ""; 
+
+            
+            resultContainer.style.display = "block";
+
+            
+            const formData = [
+                ["Name", name],
+                ["Email", email],
+                ["Password", password],
+                ["Phone", phone],
+                ["Website", website],
+                ["Age", age],
+                ["Date of Birth", dob],
+                ["Preferred Time", time],
+                ["Favorite Color", color],
+                ["Interest Level", range],
+                ["Contact Method", contactMethod],
+                ["Services Interested In", services],
+                ["Topic", topic],
+                ["Message", message]
+            ];
+
+            
+            formData.forEach(([key, value]) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${key}</td><td>${value}</td>`;
+                resultBody.appendChild(row);
+            });
+            contactForm.reset();
+            
+        });
+    }
+    
+    const profilePic = document.getElementById('profile-pic');
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    if (profilePic && modal) {
         profilePic.addEventListener('click', () => {
             modalImage.src = profilePic.src; 
             modal.classList.add('show'); 
-    });
-    modal.addEventListener('click', () => {
-        modal.classList.remove('show');
-    });
-}   
-
-//this doesn't work but it will one day!
-    // interactive blob effect
-        const blobs = document.querySelectorAll('.blob');
-        blobs.forEach(blob => {
-            blob.addEventListener('click', (event) => {
-                const clickedBlob = event.target;
-                if (clickedBlob.classList.contains('dance-effect')) return;
-                clickedBlob.classList.add('dance-effect');
-                setTimeout(() => {
+        });
+        modal.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+    }
+    const blobs = document.querySelectorAll('.blob');
+    blobs.forEach(blob => {
+        blob.addEventListener('click', (event) => {
+            const clickedBlob = event.target;
+            if (clickedBlob.classList.contains('dance-effect')) return;
+            clickedBlob.classList.add('dance-effect');
+            setTimeout(() => {
                 clickedBlob.classList.remove('dance-effect');
             }, 1000);
         });
-    });
+    })
